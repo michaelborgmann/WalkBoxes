@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'WalkBoxes_Example' do
+  pod 'WalkBoxes', :path => '../'
+
+  target 'WalkBoxes_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
