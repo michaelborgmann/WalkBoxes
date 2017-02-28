@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3C5285CDD962FAFC29C08BB7 /* Pods_WalkBoxes_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D71C3515D5AFD390F7F5CDB /* Pods_WalkBoxes_Tests.framework */; };
+		4C66CA611E61914400667F91 /* WalkBoxes.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C66CA601E61914400667F91 /* WalkBoxes.json */; };
+		4C66CA691E619F7600667F91 /* Spaceship.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C66CA681E619F7600667F91 /* Spaceship.xcassets */; };
+		4C8560F41E609AD500678AF6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4C8560F31E609AD500678AF6 /* GameScene.sks */; };
+		4C8560F61E609B6000678AF6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8560F51E609B6000678AF6 /* GameScene.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* GameViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
@@ -28,13 +32,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C00F24FBA1880C46921D9D7 /* WalkBoxes.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = WalkBoxes.podspec; path = ../WalkBoxes.podspec; sourceTree = "<group>"; };
-		48879891A868DE31489067F7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		2C00F24FBA1880C46921D9D7 /* WalkBoxes.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WalkBoxes.podspec; path = ../WalkBoxes.podspec; sourceTree = "<group>"; };
+		48879891A868DE31489067F7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		4C66CA601E61914400667F91 /* WalkBoxes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WalkBoxes.json; sourceTree = "<group>"; };
+		4C66CA681E619F7600667F91 /* Spaceship.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Spaceship.xcassets; sourceTree = "<group>"; };
+		4C8560F31E609AD500678AF6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		4C8560F51E609B6000678AF6 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		4D71C3515D5AFD390F7F5CDB /* Pods_WalkBoxes_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkBoxes_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* WalkBoxes_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkBoxes_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -46,7 +54,7 @@
 		87BD1165DD7C0763202B29F8 /* Pods-WalkBoxes_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkBoxes_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalkBoxes_Example/Pods-WalkBoxes_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A38A7D7CE0000570D792A077 /* Pods-WalkBoxes_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkBoxes_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalkBoxes_Tests/Pods-WalkBoxes_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B053D120A7C6E78BED5D820D /* Pods-WalkBoxes_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkBoxes_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkBoxes_Tests/Pods-WalkBoxes_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B533CA0ED1FA4A0290EE7E26 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B533CA0ED1FA4A0290EE7E26 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +111,15 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				607FACD71AFB9204008FA782 /* GameViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				4C8560F31E609AD500678AF6 /* GameScene.sks */,
+				4C8560F51E609B6000678AF6 /* GameScene.swift */,
+				4C66CA601E61914400667F91 /* WalkBoxes.json */,
+				4C66CA681E619F7600667F91 /* Spaceship.xcassets */,
 			);
 			name = "Example for WalkBoxes";
 			path = WalkBoxes;
@@ -215,6 +227,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = FNBTP68MJQ;
 						LastSwiftMigration = 0820;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -248,8 +261,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8560F41E609AD500678AF6 /* GameScene.sks in Resources */,
+				4C66CA691E619F7600667F91 /* Spaceship.xcassets in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				4C66CA611E61914400667F91 /* WalkBoxes.json in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,7 +377,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				4C8560F61E609B6000678AF6 /* GameScene.swift in Sources */,
+				607FACD81AFB9204008FA782 /* GameViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -483,7 +500,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -496,7 +513,9 @@
 			baseConfigurationReference = 86375C713F5168149326C1B9 /* Pods-WalkBoxes_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FNBTP68MJQ;
 				INFOPLIST_FILE = WalkBoxes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -510,7 +529,9 @@
 			baseConfigurationReference = 87BD1165DD7C0763202B29F8 /* Pods-WalkBoxes_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FNBTP68MJQ;
 				INFOPLIST_FILE = WalkBoxes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

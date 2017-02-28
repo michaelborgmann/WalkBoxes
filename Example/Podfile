@@ -2,6 +2,7 @@ use_frameworks!
 
 target 'WalkBoxes_Example' do
   pod 'WalkBoxes', :path => '../'
+  pod 'SwiftyJSON', '~> 3.1'
 
   target 'WalkBoxes_Tests' do
     inherit! :search_paths

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'WalkBoxes'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of WalkBoxes.'
+  s.summary          = 'Navigation mesh pathfinding for adventure games'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,17 +18,17 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Walk boxes are used in point 'n click adventures for pathfinding, using a navigation mesh.'
                        DESC
 
-  s.homepage         = 'https://github.com/michaelborgmann/WalkBoxes'
+  s.homepage         = 'https://github.com/michaelborgmann/WalkBoxes.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'michaelborgmann' => 'michaelborgmann@mailbox.org' }
   s.source           = { :git => 'https://github.com/michaelborgmann/WalkBoxes.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'WalkBoxes/Classes/**/*'
   
