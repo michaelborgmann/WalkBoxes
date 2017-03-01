@@ -16,6 +16,10 @@ class GameScene: SKScene {
     fileprivate var label : SKLabelNode?
     
     let sprite = SKSpriteNode(imageNamed: "Spaceship")
+    var path: [GKGraphNode2D]?
+    let node = SKShapeNode()
+    var lastTime: TimeInterval = 0
+    var nextPosition: float2?
 
     // MARK: Walk Boxes Graph
     
@@ -50,10 +54,10 @@ class GameScene: SKScene {
         var polygons: [Polygon] = []
         
         for polygon in json["rigidBodies"][0]["polygons"].arrayValue {
-            var points: [CGPoint] = []
+            var points: [float2] = []
             for point in polygon.arrayValue {
-                points.append(CGPoint(x: point["x"].doubleValue * Double(self.size.width) - 300.0,
-                                      y: point["y"].doubleValue * Double(self.size.width) - 150.0))
+                points.append(float2(x: point["x"].floatValue * Float(self.size.width) - 300.0,
+                                     y: point["y"].floatValue * Float(self.size.height) - 150.0))
             }
             polygons.append(Polygon(points: points))
         }
@@ -110,7 +114,7 @@ class GameScene: SKScene {
     }
     
     func createPath() {
-        let node = SKShapeNode()
+        //let node = SKShapeNode()
         node.strokeColor = UIColor.red
         node.lineWidth = 10
         addChild(node)
@@ -123,7 +127,6 @@ class GameScene: SKScene {
         addChild(sprite)
     }
     
-    
     // MARK: Input Handling
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -134,6 +137,65 @@ class GameScene: SKScene {
         
         let startNode = WalkBoxNode(point: startPosition)
         let endNode = WalkBoxNode(point: endPosition)
+        
+        graph.connectNodeToMesh(node: startNode)
+        graph.connectNodeToMesh(node: endNode)
+        
+        
+        if let path = graph.findPath(from: startNode, to: endNode) as? [GKGraphNode2D] {
+            nextPosition = nil
+            self.path = path.count > 0 ? path : nil
+            
+            if path.count > 0 {
+                let line = CGMutablePath()
+                line.move(to: CGPoint(x: CGFloat(path[0].position.x), y: CGFloat(path[0].position.y)))
+                for node in path {
+                    line.addLine(to: CGPoint(x: CGFloat(node.position.x), y: CGFloat(node.position.y)))
+                }
+                node.path = line
+            }
+        }
+        graph.remove([startNode, endNode])
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        let deltaTime = currentTime - lastTime
+        
+        if path != nil && nextPosition == nil {
+            nextPosition = path![0].position
+            path!.remove(at: 0)
+            if path!.count == 0 {
+                path = nil
+            }
+        }
+        
+        if let nextPosition = nextPosition {
+            let movemementSpeed = CGFloat(300)
+            
+            let displacement = nextPosition - float2(sprite.position)
+            let angle = CGFloat(atan2(displacement.y, displacement.x))
+            let maxPossibleDistanceToMove = movemementSpeed * CGFloat(deltaTime)
+            
+            let normalizedDispalcement: float2
+            if length(displacement) > 0.0 {
+                normalizedDispalcement = normalize(displacement)
+            } else {
+                normalizedDispalcement = displacement
+            }
+            
+            let actualDistanceToMove = CGFloat(length(normalizedDispalcement)) * maxPossibleDistanceToMove
+            
+            let dx = actualDistanceToMove * cos(angle)
+            let dy = actualDistanceToMove * sin(angle)
+            
+            sprite.position = CGPoint(x: sprite.position.x + dx, y: sprite.position.y + dy)
+            sprite.zRotation = atan2(-dx, dy)
+            
+            if length(displacement) <= Float(maxPossibleDistanceToMove) {
+                self.nextPosition = nil
+            }
+        }
+        lastTime = currentTime
     }
     
 }
